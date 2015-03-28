@@ -39,4 +39,10 @@ public class SearchActivity extends Activity {
             }
         });
     }
+
+    @Override
+    protected  void onResume(){
+        query = "";
+        super.onResume();
+    }
 }

@@ -4,7 +4,8 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:orientation="vertical"
-    android:background="@color/background_material_dark">
+    android:background="@color/background_material_dark"
+    android:label="Results">
 
     <ScrollView
         android:layout_width="fill_parent"

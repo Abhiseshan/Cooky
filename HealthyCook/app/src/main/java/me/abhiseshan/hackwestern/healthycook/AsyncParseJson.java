@@ -5,6 +5,7 @@ package me.abhiseshan.hackwestern.healthycook;
  */
 
         import android.content.Context;
+        import android.content.Intent;
         import android.os.AsyncTask;
         import android.util.Log;
         import android.view.Gravity;
@@ -33,12 +34,10 @@ public class AsyncParseJson extends AsyncTask<String, String, String> {
 
     private Context mContext;
     private LinearLayout rootView;
-    private String mquery="";
 
-    public AsyncParseJson(Context context, LinearLayout rootView, String query){
+    public AsyncParseJson(Context context, LinearLayout rootView){
         this.mContext = context;
         this.rootView = rootView;
-        this.mquery = query;
     }
 
     final String TAG = "AsyncTaskParseJson.java";
@@ -47,14 +46,14 @@ public class AsyncParseJson extends AsyncTask<String, String, String> {
     static String[] imageURL = new String[50];
 
     // set your json string url here
-    String Url = "https://api.edamam.com/search?q="+ mquery +"&app_id=bf82eb80&app_key=dca27d31f73acda5c232a602b0c832a0";
+    String Url = "https://api.edamam.com/search?q="+ SearchResultsActivity.query +"&app_id=bf82eb80&app_key=dca27d31f73acda5c232a602b0c832a0";
 
     // contacts JSONArray
     JSONArray dataJsonArr = null;
 
     @Override
     protected void onPreExecute() {
-        Log.d("URL", Url);
+        Log.d("URL", Url + SearchResultsActivity.query);
     }
 
     @Override

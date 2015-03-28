@@ -20,6 +20,15 @@
         <activity android:name=".SearchResultsActivity"/>
         <activity android:name=".SearchActivity"/>
 
+        <activity
+            android:name=".SampleUnderlinesDefault"
+            android:label="Underlines/Default">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="com.jakewharton.android.viewpagerindicator.sample.SAMPLE" />
+            </intent-filter>
+        </activity>
+
     </application>
 
     <uses-permission android:name="android.permission.INTERNET" />
