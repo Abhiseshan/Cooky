@@ -46,14 +46,14 @@ public class AsyncParseJson extends AsyncTask<String, String, String> {
     static String[] imageURL = new String[50];
 
     // set your json string url here
-    String Url = "https://api.edamam.com/search?q="+ SearchResultsActivity.query +"&app_id=bf82eb80&app_key=dca27d31f73acda5c232a602b0c832a0";
+    String Url = "https://api.edamam.com/search?q="+ MainActivity.query +"&app_id=bf82eb80&app_key=dca27d31f73acda5c232a602b0c832a0";
 
     // contacts JSONArray
     JSONArray dataJsonArr = null;
 
     @Override
     protected void onPreExecute() {
-        Log.d("URL", Url + SearchResultsActivity.query);
+        Log.d("URL", Url + MainActivity.query);
     }
 
     @Override
