@@ -1,5 +1,6 @@
 package me.abhiseshan.hackwestern.healthycook;
 
+import android.graphics.Color;
 import android.support.v4.app.Fragment;
 import android.content.Intent;
 import android.support.v4.app.FragmentActivity;
@@ -174,7 +175,6 @@ public class MainActivity extends ActionBarActivity{
 
         if (id == R.id.action_about) {
             Intent myIntent = new Intent(MainActivity.this, AboutActivity.class);
-            myIntent.putExtra("query", query);
             MainActivity.this.startActivity(myIntent);
         }
 
@@ -256,6 +256,16 @@ public class MainActivity extends ActionBarActivity{
                 }
             });
             return rootView;
+        }
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (mLayout != null &&
+                (mLayout.getPanelState() == PanelState.EXPANDED || mLayout.getPanelState() == PanelState.ANCHORED)) {
+            mLayout.setPanelState(PanelState.COLLAPSED);
+        } else {
+            super.onBackPressed();
         }
     }
 }
