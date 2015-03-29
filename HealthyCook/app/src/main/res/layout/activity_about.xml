@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ripple="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffe6e5ff">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="250dp"
+        android:id="@+id/dev"
+        android:background="@drawable/developer">
+
+        <ImageView
+            android:layout_width="80dp"
+            android:id="@+id/underline"
+            android:layout_height="4dp"
+            android:layout_marginBottom="40dp"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            android:background="#fff5f2ff"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:textSize="20dp"
+            android:id="@+id/header"
+            android:layout_marginBottom="10dp"
+            android:textColor="#fff5f2ff"
+            android:layout_above="@id/underline"
+            android:text="About"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_below="@id/dev"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="-40dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/card"
+        android:layout_centerHorizontal="true" >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:id="@+id/description"
+            android:layout_marginTop="10dp" />
+
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/back_button"
+        android:background="@drawable/arrow_left"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"/>
+</RelativeLayout>

@@ -31,43 +31,42 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="fill_parent"
             android:background="#ff7e8f7c"
             android:orientation="vertical"
             android:clickable="true"
             android:focusable="false"
             android:id="@+id/dragView">
 
-            <LinearLayout
-                android:layout_width="match_parent"
+            <RelativeLayout
+                android:layout_width="fill_parent"
                 android:layout_height="68dp"
-                android:orientation="horizontal"
                 android:background="#ffffff"
                 android:elevation="5dp">
 
                 <TextView
                     android:id="@+id/name"
-                    android:layout_width="fill_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:textSize="14sp"
+                    android:text="Ingredients"
+                    android:textSize="20sp"
                     android:gravity="center_vertical"
-                    android:paddingLeft="10dp"/>
+                    android:textColor="#000000"
+                    android:layout_marginLeft="15dp"/>
 
-                <com.romainpiel.shimmer.ShimmerTextView
-                    android:id="@+id/shimmer_tv"
-                    android:text="@string/Swipe up to select Ingredients"
-                    android:layout_width="fill_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:textColor="#444"
-                    android:textSize="50sp"/>
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="fill_parent"
+                    android:id="@+id/veg"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:src="@drawable/veg"/>
 
-            </LinearLayout>
+            </RelativeLayout>
 
             <LinearLayout
                 android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
+                android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
 
@@ -101,7 +100,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Chicken"
+                            android:text="Broccoli"
                             android:layout_marginLeft="20dp"
                             android:textSize="20sp"/>
                         <CheckBox
@@ -109,7 +108,7 @@
                             android:layout_height="wrap_content"
                             android:layout_alignParentRight="true"
                             android:layout_marginRight="20dp"
-                            android:id="@+id/chicken"/>
+                            android:id="@+id/broccoli"/>
                     </RelativeLayout>
 
                     <RelativeLayout
@@ -146,6 +145,193 @@
                             android:id="@+id/rice"/>
                     </RelativeLayout>
 
+                    <RelativeLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Pumpkin"
+                            android:layout_marginLeft="20dp"
+                            android:textSize="20sp"/>
+                        <CheckBox
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="20dp"
+                            android:id="@+id/pumpkin"/>
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Peas"
+                            android:layout_marginLeft="20dp"
+                            android:textSize="20sp"/>
+                        <CheckBox
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="20dp"
+                            android:id="@+id/peas"/>
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Spinach"
+                            android:layout_marginLeft="20dp"
+                            android:textSize="20sp"/>
+                        <CheckBox
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight= "20dp"
+                            android:id="@+id/spinach"/>
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Ladies Finger"
+                            android:layout_marginLeft="20dp"
+                            android:textSize="20sp"/>
+                        <CheckBox
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="20dp"
+                            android:id="@+id/ladies_finger"/>
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Apple"
+                            android:layout_marginLeft="20dp"
+                            android:textSize="20sp"/>
+                        <CheckBox
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="20dp"
+                            android:id="@+id/apple"/>
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Banana"
+                            android:layout_marginLeft="20dp"
+                            android:textSize="20sp"/>
+                        <CheckBox
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="20dp"
+                            android:id="@+id/banana"/>
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Mango"
+                            android:layout_marginLeft="20dp"
+                            android:textSize="20sp"/>
+                        <CheckBox
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="20dp"
+                            android:id="@+id/mango"/>
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Grapes"
+                            android:layout_marginLeft="20dp"
+                            android:textSize="20sp"/>
+                        <CheckBox
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="20dp"
+                            android:id="@+id/grapes"/>
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Garlic"
+                            android:layout_marginLeft="20dp"
+                            android:textSize="20sp"/>
+                        <CheckBox
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="20dp"
+                            android:id="@+id/garlic"/>
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Ginger"
+                            android:layout_marginLeft="20dp"
+                            android:textSize="20sp"/>
+                        <CheckBox
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="20dp"
+                            android:id="@+id/ginger"/>
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Cashew Nuts"
+                            android:layout_marginLeft="20dp"
+                            android:textSize="20sp"/>
+                        <CheckBox
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="20dp"
+                            android:id="@+id/cahsew_nuts"/>
+                    </RelativeLayout>
+
                 </LinearLayout>
 
                 <LinearLayout
@@ -161,7 +347,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Potato"
+                            android:text="Artichoke"
                             android:layout_marginLeft="20dp"
                             android:textSize="20sp"/>
                         <CheckBox
@@ -169,7 +355,7 @@
                             android:layout_height="wrap_content"
                             android:layout_alignParentRight="true"
                             android:layout_marginRight="20dp"
-                            android:id="@+id/potato2"/>
+                            android:id="@+id/artichoke"/>
                     </RelativeLayout>
 
                     <RelativeLayout
@@ -178,7 +364,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Chicken"
+                            android:text="Avacado"
                             android:layout_marginLeft="20dp"
                             android:textSize="20sp"/>
                         <CheckBox
@@ -186,7 +372,7 @@
                             android:layout_height="wrap_content"
                             android:layout_alignParentRight="true"
                             android:layout_marginRight="20dp"
-                            android:id="@+id/chicken2"/>
+                            android:id="@+id/avacado"/>
                     </RelativeLayout>
 
                     <RelativeLayout
@@ -195,7 +381,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Carrot"
+                            android:text="Olives"
                             android:layout_marginLeft="20dp"
                             android:textSize="20sp"/>
                         <CheckBox
@@ -203,7 +389,7 @@
                             android:layout_height="wrap_content"
                             android:layout_alignParentRight="true"
                             android:layout_marginRight="20dp"
-                            android:id="@+id/carrot2"/>
+                            android:id="@+id/olive"/>
                     </RelativeLayout>
 
                     <RelativeLayout
@@ -212,7 +398,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Rice"
+                            android:text="Water Melon"
                             android:layout_marginLeft="20dp"
                             android:textSize="20sp"/>
                         <CheckBox
@@ -220,12 +406,197 @@
                             android:layout_height="wrap_content"
                             android:layout_alignParentRight="true"
                             android:layout_marginRight="20dp"
-                            android:id="@+id/rice2"/>
+                            android:id="@+id/watermelon"/>
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Onion"
+                            android:layout_marginLeft="20dp"
+                            android:textSize="20sp"/>
+                        <CheckBox
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="20dp"
+                            android:id="@+id/onion"/>
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Tomato"
+                            android:layout_marginLeft="20dp"
+                            android:textSize="20sp"/>
+                        <CheckBox
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="20dp"
+                            android:id="@+id/tomato"/>
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Cucumber"
+                            android:layout_marginLeft="20dp"
+                            android:textSize="20sp"/>
+                        <CheckBox
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="20dp"
+                            android:id="@+id/cucumber"/>
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Radish"
+                            android:layout_marginLeft="20dp"
+                            android:textSize="20sp"/>
+                        <CheckBox
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="20dp"
+                            android:id="@+id/radish"/>
+                    </RelativeLayout>
+                    <RelativeLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Turnip"
+                            android:layout_marginLeft="20dp"
+                            android:textSize="20sp"/>
+                        <CheckBox
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="20dp"
+                            android:id="@+id/turnip"/>
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Beetroot"
+                            android:layout_marginLeft="20dp"
+                            android:textSize="20sp"/>
+                        <CheckBox
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="20dp"
+                            android:id="@+id/beetroot"/>
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Lettuce"
+                            android:layout_marginLeft="20dp"
+                            android:textSize="20sp"/>
+                        <CheckBox
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="20dp"
+                            android:id="@+id/lettuce"/>
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Beans"
+                            android:layout_marginLeft="20dp"
+                            android:textSize="20sp"/>
+                        <CheckBox
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="20dp"
+                            android:id="@+id/beans"/>
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Capsicum"
+                            android:layout_marginLeft="20dp"
+                            android:textSize="20sp"/>
+                        <CheckBox
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="20dp"
+                            android:id="@+id/capsicum"/>
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Eggplant"
+                            android:layout_marginLeft="20dp"
+                            android:textSize="20sp"/>
+                        <CheckBox
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="20dp"
+                            android:id="@+id/eggplant"/>
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Corn"
+                            android:layout_marginLeft="20dp"
+                            android:textSize="20sp"/>
+                        <CheckBox
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="20dp"
+                            android:id="@+id/corn"/>
                     </RelativeLayout>
 
                 </LinearLayout>
             </LinearLayout>
-
 
             <Button
                 android:layout_width="wrap_content"
@@ -233,10 +604,8 @@
                 android:layout_gravity="center"
                 android:text="Search"
                 android:id="@+id/search"/>
-
         </LinearLayout>
 
 
     </com.sothree.slidinguppanel.SlidingUpPanelLayout>
-
 </RelativeLayout>

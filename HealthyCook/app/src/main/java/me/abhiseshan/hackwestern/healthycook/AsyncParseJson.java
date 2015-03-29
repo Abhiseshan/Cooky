@@ -6,6 +6,7 @@ package me.abhiseshan.hackwestern.healthycook;
 
         import android.content.Context;
         import android.content.Intent;
+        import android.graphics.drawable.Drawable;
         import android.os.AsyncTask;
         import android.util.Log;
         import android.view.Gravity;
@@ -34,6 +35,7 @@ public class AsyncParseJson extends AsyncTask<String, String, String> {
 
     private Context mContext;
     private LinearLayout rootView;
+    private int length;
 
     public AsyncParseJson(Context context, LinearLayout rootView){
         this.mContext = context;
@@ -71,6 +73,8 @@ public class AsyncParseJson extends AsyncTask<String, String, String> {
             dataJsonArr = json.getJSONArray("hits");
             Log.d("length: ", "length: " + dataJsonArr.length());
 
+            length = dataJsonArr.length();
+
             // loop through all elements
             for (int i = 0; i < dataJsonArr.length(); i++) {
 
@@ -93,22 +97,30 @@ public class AsyncParseJson extends AsyncTask<String, String, String> {
 
     @Override
     protected void onPostExecute(String strFromDoInBg) {
-         for (int i=0; i< 10; i++){
-             RelativeLayout rl = new RelativeLayout(mContext);
-             rl.setPadding(0,0,0,10);
-             ImageView img = new ImageView(mContext);
-             img.setLayoutParams(new Toolbar.LayoutParams(Toolbar.LayoutParams.FILL_PARENT, Toolbar.LayoutParams.FILL_PARENT));
-             img.setScaleType(ImageView.ScaleType.CENTER_CROP);
-             //img.setMaxHeight(300);
-             Picasso.with(mContext).load(imageURL[i]).into(img);
-             rl.addView(img);
-             TextView tv = new TextView(mContext);
-             tv.setText(uri[i]);
-             tv.setGravity(Gravity.CENTER | Gravity.BOTTOM);
-             tv.setTextSize(20);
-             tv.setLayoutParams(new Toolbar.LayoutParams(Toolbar.LayoutParams.FILL_PARENT, Toolbar.LayoutParams.WRAP_CONTENT));
-             rl.addView(tv);
-             rootView.addView(rl);
-         }
+
+        if (length == 0){
+            ImageView img = new ImageView(mContext);
+            img.setLayoutParams(new Toolbar.LayoutParams(Toolbar.LayoutParams.FILL_PARENT, Toolbar.LayoutParams.FILL_PARENT));
+            img.setImageDrawable(mContext.getResources().getDrawable(R.drawable.recipe_not_found));
+            rootView.addView(img);
+        } else {
+            for (int i = 0; i < 10; i++) {
+                RelativeLayout rl = new RelativeLayout(mContext);
+                rl.setPadding(0, 0, 0, 10);
+                ImageView img = new ImageView(mContext);
+                img.setLayoutParams(new Toolbar.LayoutParams(Toolbar.LayoutParams.FILL_PARENT, Toolbar.LayoutParams.FILL_PARENT));
+                img.setScaleType(ImageView.ScaleType.CENTER_CROP);
+                //img.setMaxHeight(300);
+                Picasso.with(mContext).load(imageURL[i]).into(img);
+                rl.addView(img);
+                TextView tv = new TextView(mContext);
+                tv.setText(uri[i]);
+                tv.setGravity(Gravity.CENTER | Gravity.BOTTOM);
+                tv.setTextSize(20);
+                tv.setLayoutParams(new Toolbar.LayoutParams(Toolbar.LayoutParams.FILL_PARENT, Toolbar.LayoutParams.WRAP_CONTENT));
+                rl.addView(tv);
+                rootView.addView(rl);
+            }
+        }
     }
 }

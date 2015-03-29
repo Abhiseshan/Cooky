@@ -6,7 +6,7 @@ android {
 
     defaultConfig {
         applicationId "me.abhiseshan.hackwestern.healthycook"
-        minSdkVersion 16
+        minSdkVersion 19
         targetSdkVersion 21
         versionCode 1
         versionName "1.0"
@@ -28,4 +28,5 @@ dependencies {
     compile project(":ViewPageIndicator")
     compile 'com.sothree.slidinguppanel:library:3.0.0'
     compile 'com.romainpiel.shimmer:library:1.3.0@aar'
+    compile 'com.arasthel:gnavdrawer-library:+'
 }
