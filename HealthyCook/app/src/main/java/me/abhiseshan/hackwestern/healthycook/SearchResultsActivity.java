@@ -19,7 +19,7 @@ import android.widget.TextView;
 
 import java.util.concurrent.TimeUnit;
 
-public class SearchResultsActivity extends ActionBarActivity {
+public class SearchResultsActivity extends Activity {
 
     public static String query;
     View view;
@@ -27,6 +27,8 @@ public class SearchResultsActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_searchresults);
+
+
 
         Bundle extras = getIntent().getExtras();
         if (extras != null) {

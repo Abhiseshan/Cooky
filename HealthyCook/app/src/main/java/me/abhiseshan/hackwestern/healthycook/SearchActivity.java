@@ -35,7 +35,6 @@ public class SearchActivity extends Activity {
                 Intent myIntent = new Intent(SearchActivity.this, SearchResultsActivity.class);
                 myIntent.putExtra("query", query);
                 SearchActivity.this.startActivity(myIntent);
-
             }
         });
     }

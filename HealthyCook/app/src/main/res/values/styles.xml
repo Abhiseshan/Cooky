@@ -5,6 +5,7 @@
         <!-- Customize your theme here. -->
         <item name="SwipeFlingStyle">@style/SwipeFling</item>
         <item name="colorPrimary">@android:color/transparent</item>
+        <item name="android:colorPrimaryDark">#ffe91200</item>
         <item name="windowActionBarOverlay">true</item>
     </style>
 
@@ -14,5 +15,14 @@
     <color name="card_shadow_1">#d4d4d4</color>
     <color name="card_shadow_2">#dddddd</color>
     <color name="card_detailing">#eee</color>
+
+    <style name="AboutTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:colorPrimaryDark">#ff6100e9</item>
+    </style>
+
+    <style name="ListTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:colorPrimaryDark">#ff4d1324</item>
+    </style>
+
 
 </resources>

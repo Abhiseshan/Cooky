@@ -17,17 +17,22 @@
         sothree:umanoDragView="@+id/dragView"
         sothree:umanoOverlay="true">
 
-        <LinearLayout
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:orientation="vertical">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-            <ImageView
+            <android.support.v4.view.ViewPager
+                android:id="@+id/pager"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+            <com.viewpagerindicator.LinePageIndicator
+                android:id="@+id/titles"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
                 android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
-                android:layout_weight="1"
-                android:src="@drawable/easy10"/>
-        </LinearLayout>
+                android:layout_marginBottom="80dp"/>
+        </RelativeLayout>
 
         <LinearLayout
             android:layout_width="match_parent"

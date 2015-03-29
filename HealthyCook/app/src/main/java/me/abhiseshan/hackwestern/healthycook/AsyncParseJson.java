@@ -6,6 +6,7 @@ package me.abhiseshan.hackwestern.healthycook;
 
         import android.content.Context;
         import android.content.Intent;
+        import android.graphics.Color;
         import android.graphics.drawable.Drawable;
         import android.os.AsyncTask;
         import android.util.Log;
@@ -117,8 +118,9 @@ public class AsyncParseJson extends AsyncTask<String, String, String> {
                 tv.setText(uri[i]);
                 tv.setGravity(Gravity.CENTER | Gravity.BOTTOM);
                 tv.setTextSize(20);
+                tv.setBackgroundColor(Color.parseColor("#80000000"));
                 tv.setLayoutParams(new Toolbar.LayoutParams(Toolbar.LayoutParams.FILL_PARENT, Toolbar.LayoutParams.WRAP_CONTENT));
-                rl.addView(tv);
+                if(tv.getText()!= null) rl.addView(tv);
                 rootView.addView(rl);
             }
         }

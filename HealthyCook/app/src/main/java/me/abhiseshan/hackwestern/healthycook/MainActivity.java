@@ -1,7 +1,11 @@
 package me.abhiseshan.hackwestern.healthycook;
 
-import android.app.Fragment;
+import android.support.v4.app.Fragment;
 import android.content.Intent;
+import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -12,24 +16,37 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 
 import com.sothree.slidinguppanel.SlidingUpPanelLayout;
 import com.sothree.slidinguppanel.SlidingUpPanelLayout.PanelSlideListener;
 import com.sothree.slidinguppanel.SlidingUpPanelLayout.PanelState;
+import com.viewpagerindicator.LinePageIndicator;
 
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends ActionBarActivity{
 
     public static String query ="";
     private static final String TAG = "DemoActivity";
     private SlidingUpPanelLayout mLayout;
+    AppSectionsPagerAdapter mAppSectionsPagerAdapter;
+    ViewPager mViewPager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        mAppSectionsPagerAdapter = new AppSectionsPagerAdapter(getSupportFragmentManager());
+        mViewPager = (ViewPager) findViewById(R.id.pager);
+        mViewPager.setAdapter(mAppSectionsPagerAdapter);
+
+        LinePageIndicator titleIndicator = (LinePageIndicator)findViewById(R.id.titles);
+        titleIndicator.setViewPager(mViewPager);
 
         mLayout = (SlidingUpPanelLayout) findViewById(R.id.sliding_layout);
         mLayout.setPanelState(PanelState.HIDDEN);
@@ -211,11 +228,8 @@ public class MainActivity extends ActionBarActivity {
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
-            View rootView = inflater.inflate(R.layout.fragment_welcome, container, false);
-
-            // Shimmering Effect
-
-
+            View rootView = inflater.inflate(R.layout.fragment_main, container, false);
+            Log.d("view inflated", "view inflated1");
             return rootView;
         }
     }
@@ -229,9 +243,18 @@ public class MainActivity extends ActionBarActivity {
         public static final String ARG_SECTION_NUMBER = "section_number";
 
         @Override
-        public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                                 Bundle savedInstanceState) {
-            View rootView = inflater.inflate(R.layout.fragment_menu, container, false);
+        public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+            final View rootView = inflater.inflate(R.layout.fragment_save, container, false);
+            Log.d("view inflated", "view inflated2");
+
+            final ImageButton button = (ImageButton) rootView.findViewById(R.id.butt);
+            button.setOnClickListener(new View.OnClickListener() {
+                public void onClick(View v) {
+                    Intent myIntent = new Intent(getActivity(), SimpleScannerActivity.class);
+                    myIntent.putExtra("query", query);
+                    getActivity().startActivity(myIntent);
+                }
+            });
             return rootView;
         }
     }

@@ -29,4 +29,5 @@ dependencies {
     compile 'com.sothree.slidinguppanel:library:3.0.0'
     compile 'com.romainpiel.shimmer:library:1.3.0@aar'
     compile 'com.arasthel:gnavdrawer-library:+'
+    compile 'me.dm7.barcodescanner:zbar:1.6.3'
 }
